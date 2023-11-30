@@ -1,0 +1,21 @@
+:root {
+  --ion-color-cast-bg: #f6f7fb;
+  --ion-color-cast-bg-rgb: 246, 247, 251;
+  --ion-color-cast-bg-contrast: #000000;
+  --ion-color-cast-bg-contrast-rgb: 0, 0, 0;
+  --ion-color-cast-bg-shade: #d8d9dd;
+  --ion-color-cast-bg-tint: #f7f8fb;
+
+  --base-step-1: #000;
+  --base-step-2: #7a7a7a;
+  --base-step-3: rgba(0, 0, 0, 0.4);
+}
+
+.ion-color-cast-bg {
+  --ion-color-base: var(--ion-color-cast-bg);
+  --ion-color-base-rgb: var(--ion-color-cast-bg-rgb);
+  --ion-color-contrast: var(--ion-color-cast-bg-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-cast-bg-contrast-rgb);
+  --ion-color-shade: var(--ion-color-cast-bg-shade);
+  --ion-color-tint: var(--ion-color-cast-bg-tint);
+}

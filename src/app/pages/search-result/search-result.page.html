@@ -1,0 +1,42 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="cast-bg">
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/"
+        color="dark"
+        text="Back"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title>Search result</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="cast-bg">
+  <section>
+    <ion-searchbar
+      mode="md"
+      placeholder="Type here to search..."
+      animated="true"
+      debounce="500"
+      [(ngModel)]="query"
+      (ionInput)="filter($event)"
+      #searchBar
+    ></ion-searchbar>
+  </section>
+  <section class="fresh">
+    <ul class="fresh-list" lines="none">
+      <li *ngFor="let podcast of fresh" (click)="castPod(podcast)">
+        <div class="fresh-meta">
+          <div class="fresh-image">
+            <img [src]="podcast?.cover" />
+          </div>
+          <div class="fresh-info">
+            <ion-label class="fresh-list-title">{{podcast?.title}}</ion-label>
+            <ion-label>{{podcast?.podcast}}</ion-label>
+            <ion-label>{{podcast?.date}} | {{podcast?.duration}}</ion-label>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+</ion-content>

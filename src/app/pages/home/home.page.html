@@ -1,0 +1,86 @@
+<!-- <ion-header class="ion-no-border">
+  <ion-toolbar class="ion-padding-top" color="cast-bg" mode="md">
+    <ion-title>Hey Mitchell </ion-title>
+    <div
+      slot="end"
+      mode="ios"
+      class="ion-padding-end avatar"
+      (click)="openProfile()"
+    >
+      <img src="https://randomuser.me/api/portraits/men/18.jpg" />
+    </div>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true" color="cast-bg ion-padding">
+  <ion-row class="ion-margin-vertical ion-justify-content-between ion-align-items-center">
+    <ion-col
+      size="8"
+      class="ion-no-padding"
+      style="align-items: start; display: block"
+    >
+      <ion-text color="dark"><h4>Hey Mitchell 👋</h4></ion-text>
+      <ion-text color="medium"
+        ><span style="font-size: small"
+          >Listen to your Favourite Podcasts</span
+        ></ion-text
+      >
+    </ion-col>
+    <ion-col
+      size="4"
+      class="ion-no-padding flex-centered"
+      style="align-items: end"
+    >
+      <div mode="ios" class="avatar" (click)="openProfile()">
+        <img src="https://randomuser.me/api/portraits/men/18.jpg" />
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row class="searchBox ion-margin-vertical ion-justify-content-between ion-align-items-center">
+    <ion-col size="1.5" style="font-size: 25px;" class="flex-centered">
+      <ion-icon color="medium" icon="search"> </ion-icon>
+    </ion-col>
+    <ion-col size="8.5">
+      <ion-input mode="ios" (keypress)="search($event)" placeholder="Search Podcast"> </ion-input>
+    </ion-col>
+    <ion-col size="2" style="font-size: 25px;" class="flex-centered">
+      <ion-icon color="medium" icon="mic"> </ion-icon>
+    </ion-col>
+  </ion-row>
+
+  <section class="discover">
+    <h3>Discover Topics</h3>
+    <div class="discover-list">
+      <div
+        class="discover-card"
+        *ngFor="let item of discoverList"
+        (click)="channel(item)"
+      >
+        <img [src]="item?.cover" alt="" />
+        <ion-label> {{item?.podcast}} </ion-label>
+      </div>
+    </div>
+  </section>
+
+  <section class="fresh">
+    <div class="header-double">
+      <h3>Fresh</h3>
+      <ion-label> See all </ion-label>
+    </div>
+
+    <ul class="fresh-list" lines="none">
+      <li *ngFor="let podcast of fresh" (click)="castPod(podcast)">
+        <div class="fresh-meta">
+          <div class="fresh-image">
+            <img [src]="podcast?.cover" />
+          </div>
+          <div class="fresh-info">
+            <ion-label class="fresh-list-title">{{podcast?.title}}</ion-label>
+            <ion-label>{{podcast?.podcast}}</ion-label>
+            <ion-label>{{podcast?.date}} | {{podcast?.duration}}</ion-label>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+</ion-content>

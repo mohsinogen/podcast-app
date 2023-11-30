@@ -1,0 +1,59 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="cast-bg">
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/"
+        color="dark"
+        text="Back"
+      ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="cast-bg ion-padding">
+  <section>
+    <div class="cover-art">
+      <img [src]="podcast?.cover" alt="" />
+      <ion-label> {{podcast?.title}} </ion-label>
+
+      <ion-label class="channel-name"> {{podcast?.podcast}} </ion-label>
+    </div>
+  </section>
+
+  <section class="play-control">
+    <ion-range
+      #range
+      [(ngModel)]="progress"
+      max="100"
+      (touchend)="seek()"
+      (mouseup)="seek()"
+    ></ion-range>
+
+    <div class="controls">
+      <ion-buttons mode="md">
+        <ion-button mode="ios" (click)="seekBack()" size="large">
+          <img src="/assets/icon/seek-back.svg" alt="" />
+        </ion-button>
+        <ion-button
+          mode="ios"
+          (click)="togglePlay(false)"
+          size="large"
+          *ngIf="!isPlaying"
+        >
+          <ion-icon name="play-circle" class="play"></ion-icon>
+        </ion-button>
+        <ion-button
+          mode="ios"
+          (click)="togglePlay(true)"
+          size="large"
+          *ngIf="isPlaying"
+        >
+          <ion-icon name="pause-circle" class="play"></ion-icon>
+        </ion-button>
+        <ion-button mode="ios" (click)="seekForward()" size="large">
+          <img src="/assets/icon/seek-forward.svg" />
+        </ion-button>
+      </ion-buttons>
+    </div>
+  </section>
+</ion-content>

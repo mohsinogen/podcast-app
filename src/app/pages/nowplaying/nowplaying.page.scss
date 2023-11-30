@@ -1,0 +1,32 @@
+.cover-art {
+  width: 90%;
+  margin: 0 auto;
+  // text-align: center;
+
+  img {
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  ion-label {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-weight: 600;
+  }
+
+  .channel-name {
+    font-weight: 400;
+  }
+}
+
+.play-control {
+  margin-top: 50px;
+
+  ion-range {
+    --bar-background: var(--base-step-1);
+    --bar-background-active: var(--base-step-1);
+    --knob-background: var(--base-step-1);
+    --knob-size: 15px;
+  }
+}

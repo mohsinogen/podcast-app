@@ -3,20 +3,40 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    path: '',
+    loadChildren: () =>
+      import('./tabs/tabs.module').then((m) => m.TabsPageModule),
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    path: 'station',
+    loadChildren: () =>
+      import('./pages/station/station.module').then((m) => m.StationPageModule),
+  },
+  {
+    path: 'nowplaying',
+    loadChildren: () =>
+      import('./pages/nowplaying/nowplaying.module').then(
+        (m) => m.NowplayingPageModule
+      ),
+  },
+  {
+    path: 'search-result',
+    loadChildren: () =>
+      import('./pages/search-result/search-result.module').then(
+        (m) => m.SearchResultPageModule
+      ),
+  },
+  {
+    path: 'tabs',
+    loadChildren: () =>
+      import('./tabs/tabs.module').then((m) => m.TabsPageModule),
   },
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
   ],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

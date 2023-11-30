@@ -1,0 +1,42 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="cast-bg">
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/"
+        color="dark"
+        text="Back"
+      ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="cast-bg ion-padding">
+  <section>
+    <div class="channel-cover">
+      <img [src]="station?.cover" alt="" />
+      <ion-label> {{station?.podcast}} </ion-label>
+    </div>
+  </section>
+
+  <section class="fresh">
+    <div class="header-double">
+      <h3>Episodes</h3>
+      <ion-label> {{fresh.length}} </ion-label>
+    </div>
+
+    <ul class="fresh-list" lines="none">
+      <li *ngFor="let podcast of fresh" (click)="castPod(podcast)">
+        <div class="fresh-meta">
+          <div class="fresh-image">
+            <img [src]="podcast?.cover" />
+          </div>
+          <div class="fresh-info">
+            <ion-label class="fresh-list-title">{{podcast?.title}}</ion-label>
+            <ion-label>{{podcast?.podcast}}</ion-label>
+            <ion-label>{{podcast?.date}} | {{podcast?.duration}}</ion-label>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </section>
+</ion-content>

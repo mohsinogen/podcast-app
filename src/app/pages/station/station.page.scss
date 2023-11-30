@@ -1,0 +1,22 @@
+.channel-cover {
+  img {
+    height: 215px;
+    width: 333px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+    border-radius: 15px;
+  }
+
+  ion-label {
+    display: block;
+    margin-top: 20px;
+    font-weight: 500;
+    text-align: center;
+    font-size: 18px;
+  }
+}
+
+.fresh {
+  margin-top: 50px;
+}
