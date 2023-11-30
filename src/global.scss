@@ -107,3 +107,14 @@ h3 {
   justify-content: center !important;
   align-items: center !important;
 }
+
+.circularIconBtn{
+    width: 3em;
+    height: 3em;
+    background: #FFFFFF !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--transparent-bg);
+}
