@@ -15,6 +15,9 @@ export class NowplayingPage implements OnInit {
   progress = 0;
   player!: Howl;
   podcast: any;
+  minutesLeft="";
+  totalTime={minutes:0, seconds:0};
+  seekTime={minutes:0, seconds:0};
   constructor(private router: Router) {}
 
   ngOnInit() {
@@ -86,9 +89,16 @@ export class NowplayingPage implements OnInit {
 
   playerProgress() {
     let seek = this.player.seek();
-    this.progress = (seek / this.player.duration()) * 100 || 0;
+    let duration = this.player.duration();
 
-    // console.log(this.progress);
+    if(this.totalTime.minutes===0){
+      this.totalTime = this.secondsToMinutes(duration);
+    }
+    this.seekTime = this.secondsToMinutes(seek);
+    
+    this.progress = (seek / duration) * 100 || 0;
+
+    this.minutesLeft = "left "+this.secondsToMinutes(duration-seek).minutes.toString()+" min"
 
     setTimeout(() => {
       if (this.isPlaying) {
@@ -99,5 +109,14 @@ export class NowplayingPage implements OnInit {
 
   ionViewWillLeave() {
     if (this.player) this.player.stop();
+  }
+
+  secondsToMinutes(seconds:number) {
+    var minutes = Math.floor(seconds / 60);
+    var remainingSeconds = Math.floor(seconds % 60);
+    return {
+      minutes: minutes,
+      seconds: remainingSeconds
+    };
   }
 }

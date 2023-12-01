@@ -1,17 +1,17 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar color="cast-bg">
-    <ion-buttons slot="start">
-      <ion-back-button
-        defaultHref="/"
-        color="dark"
-        text="Back"
-      ></ion-back-button>
-    </ion-buttons>
-    <ion-title>Search result</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content class="ion-padding" color="cast-bg">
+
+  <ion-row class="ion-justify-content-between ion-align-items-center ion-margin-vertical">
+    <ion-col size="2">
+      <div class="circularIconBtn" routerLink="/" routerDirection="back">
+        <ion-buttons fill="solid" slot="start" mode="md">
+          <ion-button mode="ios">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </div>
+    </ion-col>
+  </ion-row>
+
   <section>
     <ion-searchbar
       mode="md"

@@ -1,16 +1,3 @@
-<!-- <ion-header class="ion-no-border">
-  <ion-toolbar color="cast-bg">
-    <ion-buttons slot="start">
-      <ion-back-button
-        defaultHref="/"
-        color="dark"
-        text="Back"
-      ></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header> -->
-
-
 <ion-content [fullscreen]="true" color="cast-bg ion-padding">
 
   <ion-row class="ion-justify-content-between ion-align-items-center ion-margin-vertical">
@@ -46,6 +33,12 @@
       <img [src]="station?.cover" alt="" />
     </div>
   </section>
+
+  <ion-text color="medium">
+    <h6>
+      {{station?.description}}
+    </h6>
+  </ion-text>
 
   <section class="fresh">
     <div class="header-double">
