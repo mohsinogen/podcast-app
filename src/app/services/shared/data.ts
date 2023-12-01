@@ -5,7 +5,7 @@ export const discover = [
     description: 'Dive deep into the fascinating stories behind the creation of iconic software, exploring the challenges, breakthroughs, and lessons learned.'
   },
   {
-    cover: '/assets/images/programming_p1.jpeg',
+    cover: '/assets/images/aiml.jpeg',
     podcast: 'AI and Ml',
     description: 'Explore the decentralized web with experts and pioneers shaping the future of the internet. From blockchain technologies to decentralized applications.'
   },
